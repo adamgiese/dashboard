@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { connect } from 'react-redux';
+import Clock from './Clock.jsx';
 import { testAction } from '../services/actions';
 /* eslint-ensable no-unused-vars */
 
@@ -20,11 +21,14 @@ const App = (props) => {
     dispatchTestAction,
   } = props;
   return (
-    <div className='app'>
-      { hola ?
-        <h1 className='app-title'>Hola, {hola}!</h1>
-        : <button onClick={() => dispatchTestAction()}>Click Me</button>
-      }
+    <div className='dashboard'>
+      <div className='clock'>
+        <Clock />
+      </div>
+      <div className='photo'></div>
+      <div className='app'></div>
+      <div className='app-picker'></div>
+      <div className='todo'></div>
     </div>
   );
 };
